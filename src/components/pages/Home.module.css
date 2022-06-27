@@ -1,0 +1,19 @@
+.l-home-layout {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.l-home-layout__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.c-welcome {
+  margin: 0 1rem;
+  text-align: center;
+  font-size: 13px;
+  color: var(--mid-grey);
+}
