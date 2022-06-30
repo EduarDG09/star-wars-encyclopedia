@@ -1,0 +1,23 @@
+.l-items-grid {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.l-items-grid__item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@media (min-width: 500px) {
+  .l-items-grid__item {
+    grid-gap: 1rem;
+  }
+  .l-items-grid__item--auto-justify {
+    justify-content: center;
+  }
+  .l-items-grid__item--auto-justify-min {
+    justify-content: start;
+  }
+}

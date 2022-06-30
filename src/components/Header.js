@@ -5,27 +5,27 @@ import styles from "./Header.module.css";
 const menuOptions = [
   {
     value: "Characters",
-    link: "/characters",
+    link: "/#",
   },
   {
     value: "Films",
-    link: "/films",
+    link: "/#",
   },
   {
     value: "Species",
-    link: "/species",
+    link: "/#",
   },
   {
     value: "Starships",
-    link: "/starships",
+    link: "/#",
   },
   {
     value: "Vehicles",
-    link: "/vehicles",
+    link: "/#",
   },
   {
     value: "Planets",
-    link: "/planets",
+    link: "/#",
   },
 ];
 export default function Header() {

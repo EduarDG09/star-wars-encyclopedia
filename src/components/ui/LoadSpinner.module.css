@@ -1,0 +1,16 @@
+.c-load-spinner {
+  padding: 2rem;
+}
+
+.c-load-spinner svg {
+  animation: spin 1000ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

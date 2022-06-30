@@ -1,6 +1,6 @@
 .c-search-bar {
   width: 100%;
-  max-width: 860px;
+  max-width: 640px;
   display: flex;
   border: 2px solid var(--med-grey);
   border-radius: 12px;
@@ -17,7 +17,7 @@
   color: var(--med-grey);
   font-size: 18px;
   padding-left: 1rem;
-  padding-right: 0.1rem;
+  padding-right: 3rem;
   transition: color 150ms ease-in, background-color 150ms ease-in;
 }
 .c-search-bar__input:focus {
@@ -28,9 +28,7 @@
 .c-search-bar__input::placeholder {
   color: var(--light-grey);
 }
-.c-search-bar__input:focus::placeholder {
-  color: var(--white);
-}
+.c-search-bar__input:focus::placeholder,
 .c-search-bar__input:focus ~ .c-search-bar__icon {
   color: var(--white);
 }

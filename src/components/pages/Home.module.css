@@ -1,7 +1,8 @@
 .l-home-layout {
+  border-bottom: 1px solid var(--light-grey);
   flex: 1;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
 }

@@ -1,30 +1,31 @@
 import React from "react";
 import styles from "./Footer.module.css";
+import { Link, GitHub } from "react-feather";
 
 export default function Footer() {
   return (
     <div className={styles["l-footer"]}>
       <div className={styles["l-footer__item"]}>
         <p className={styles["l-footer__text"]}>
-          Image source{" "}
+          Images -{" "}
           <a
-            href="https://starwas-visualguide.com"
+            href="https://starwars-visualguide.com"
             target="_blank"
             rel="noreferrer"
           >
-            Star Wars Visual Guide
+            <Link size={12} /> Star Wars Visual Guide
           </a>
         </p>
       </div>
       <div className={styles["l-footer-item"]}>
         <p className={styles["l-footer__text"]}>
-          Images{" "}
+          Source code -{" "}
           <a
-            href="https://starwas-visualguide.com"
+            href="https://github.com/EduarDG09/star-wars-encyclopedia"
             target="_blank"
             rel="noreferrer"
           >
-            Star Wars Visual Guide
+            <GitHub size={12} /> Github
           </a>
         </p>
       </div>
