@@ -80,7 +80,6 @@
 @media (min-width: 800px) {
   .c-main-nav__menu {
     display: flex;
-    gap: 2rem;
     justify-content: center;
     padding: 1rem 0;
   }
@@ -93,6 +92,10 @@
 @media (min-width: 800px) {
   .c-main-nav__item {
     width: min-content;
+    margin-right: 2rem;
+  }
+  .c-main-nav__item:last-child {
+    margin-right: unset;
   }
 }
 .c-main-nav__item a {
