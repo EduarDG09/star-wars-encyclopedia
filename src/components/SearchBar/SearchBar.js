@@ -12,13 +12,14 @@ export default function SearchBar(props) {
 
   return (
     <div className={styles["c-search-bar"]}>
+      <p className={styles["c-search-bar__title"]}>Search:</p>
       <input
         type="text"
         autoComplete="new-password"
         required={true}
         onChange={onSearch}
         id="search-input"
-        placeholder="Search"
+        placeholder="Find characters, films, species and planets..."
         className={styles["c-search-bar__input"]}
       ></input>
       <Search className={styles["c-search-bar__icon"]} />

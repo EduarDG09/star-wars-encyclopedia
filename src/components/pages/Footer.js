@@ -17,7 +17,7 @@ export default function Footer() {
           </a>
         </p>
       </div>
-      <div className={styles["l-footer-item"]}>
+      <div className={styles["l-footer__item"]}>
         <p className={styles["l-footer__text"]}>
           Source code -{" "}
           <a

@@ -1,4 +1,5 @@
 .l-items-grid {
+  padding: 1rem 0;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -20,4 +21,25 @@
   .l-items-grid__item--auto-justify-min {
     justify-content: start;
   }
+}
+.c-items-not-found {
+  width: 100%;
+  margin-top: 1rem;
+}
+.c-items-not-found__icon {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--light-grey);
+}
+.c-items-not-found__icon svg {
+  size: 48px;
+  stroke-width: 2px;
+  opacity: 0.5;
+}
+.c-items-not-found__text {
+  color: var(--med-grey);
+  font-size: 1.25rem;
+  text-align: center;
+  line-height: 32px;
 }

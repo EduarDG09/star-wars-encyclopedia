@@ -1,5 +1,6 @@
 .l-home-layout {
-  border-bottom: 1px solid var(--light-grey);
+  /* border-bottom: 1px solid var(--light-grey); */
+  margin-top: 1rem;
   flex: 1;
   width: 100%;
   padding: 2rem 1rem 1rem 1rem;
@@ -14,7 +15,18 @@
 }
 .c-welcome {
   margin: 0 1rem;
+  max-width: 480px;
   text-align: center;
   font-size: 13px;
+}
+@media (min-width: 800px) {
+  .c-welcome {
+    font-size: 0.875em;
+    max-width: 520px;
+    padding: 1rem 0;
+  }
+}
+.c-welcome__text {
+  margin: 0;
   color: var(--mid-grey);
 }

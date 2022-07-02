@@ -16,6 +16,7 @@ export default function Item(props) {
       <img
         className={styles["c-item__img"]}
         src={`https://starwars-visualguide.com/assets/img/${type}/${itemNumber}.jpg`}
+        onError={(e) => e.target.remove()}
       />
       <h3 className={styles["c-item__text"]}>{item.name || item.title}</h3>
       <p className={styles["c-item__type"]}>{`${type

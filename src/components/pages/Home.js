@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react";
 import styles from "./Home.module.css";
 import { debounce } from "lodash";
 import ItemsGrid from "../ItemsGrid/ItemsGrid.js";
-import LoadSpinner from "../ui/LoadSpinner";
+import GridLoading from "../ui/GridLoading";
 
 export default function Home() {
   const [searchResult, setSearchResult] = useState([]);
@@ -20,6 +20,7 @@ export default function Home() {
         `https://swapi.dev/api/people/?search=${searchInput}`,
         `https://swapi.dev/api/films/?search=${searchInput}`,
         `https://swapi.dev/api/species/?search=${searchInput}`,
+        `https://swapi.dev/api/planets/?search=${searchInput}`,
       ];
       while (nextUrls.some((url) => url !== null)) {
         const allRequests = [];
@@ -39,6 +40,7 @@ export default function Home() {
     setRequestStatus("COMPLETED");
     setSearchInput("");
     setSearchResult(data.value);
+    return data.done;
   };
 
   if (requestStatus === "LOADING" && searchInput !== "") {
@@ -53,7 +55,7 @@ export default function Home() {
         } else {
           setRequestStatus("");
         }
-      }, 800),
+      }, 1000),
     []
   );
 
@@ -76,22 +78,15 @@ export default function Home() {
                 MoureDev Monthly Challenge&apos;s Star Wars App
               </a>
               ; where we provide to you a little bit of information about this
-              amazing world,
-              <br />
-              using{" "}
+              amazing world, using{" "}
               <a target="_blank" rel="noreferrer " href="https://swapi.dev">
                 SWAPI
               </a>{" "}
               as a source of data.
-              <br />
-              <br />
-              Feel free to try things out by using our search field above, or
-              moving around with our nav bar. Have fun, and may the force be
-              with you :)
             </p>
           </div>
         )}
-        {requestStatus === "LOADING" && <LoadSpinner />}
+        {requestStatus === "LOADING" && <GridLoading />}
         {requestStatus === "COMPLETED" && (
           <ItemsGrid items={searchResult} moreData={handleData} />
         )}

@@ -1,4 +1,5 @@
 .c-item {
+  background-color: var(--light-grey);
   width: 140px;
   height: 200px;
   min-width: 140px;
