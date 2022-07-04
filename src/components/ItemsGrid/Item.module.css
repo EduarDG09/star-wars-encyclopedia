@@ -1,5 +1,10 @@
+:root {
+  --anim-delay: 50ms;
+}
 .c-item {
   background-color: var(--light-grey);
+  opacity: 0;
+  animation: fade-in 200ms ease-in var(--anim-delay) forwards;
   width: 140px;
   height: 200px;
   min-width: 140px;
@@ -43,4 +48,12 @@
   font-size: 10px;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

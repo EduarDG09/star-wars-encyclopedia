@@ -5,15 +5,16 @@ import PropTypes from "prop-types";
 Item.propTypes = {
   item: PropTypes.object,
   typeLabel: PropTypes.bool,
+  style: PropTypes.object,
 };
 
 export default function Item(props) {
-  const { item, typeLabel } = props;
+  const { style, item, typeLabel } = props;
   const itemNumber = item.url.split("/")[5];
   let type = item.url.split("/")[4];
   if (type === "people") type = "characters";
   return (
-    <article className={styles["c-item"]}>
+    <article style={style} className={styles["c-item"]}>
       <img
         className={styles["c-item__img"]}
         src={`https://starwars-visualguide.com/assets/img/${type}/${itemNumber}.jpg`}

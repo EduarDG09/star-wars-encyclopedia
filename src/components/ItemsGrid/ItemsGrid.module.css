@@ -13,7 +13,8 @@
 }
 @media (min-width: 500px) {
   .l-items-grid__item {
-    grid-gap: 1rem;
+    padding: 0 0.5rem;
+    grid-gap: 0.75rem;
   }
   .l-items-grid__item--auto-justify {
     justify-content: center;

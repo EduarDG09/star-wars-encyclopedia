@@ -29,12 +29,18 @@ export default function ItemsGrid(props) {
 
   if (items.length <= 4)
     classStr = styles["l-items-grid__item--auto-justify-min"];
+  const delay = 50;
 
   return (
     <section className={styles["l-items-grid"]}>
       <div className={`${styles["l-items-grid__item"]} ${classStr}`}>
         {items.map((item, i) => (
-          <Item key={i} item={item} typeLabel={typeLabel} />
+          <Item
+            key={i}
+            item={item}
+            typeLabel={typeLabel}
+            style={{ "--anim-delay": `${delay * (i + 1)}ms` }}
+          />
         ))}
       </div>
     </section>

@@ -47,11 +47,19 @@ export default function List() {
   const handleNextPage = () => {
     getItems(currentPage + 1);
     setCurrentPage((page) => page + 1);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const handlePrevPage = () => {
     getItems(currentPage - 1);
     setCurrentPage((page) => page - 1);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {

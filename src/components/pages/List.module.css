@@ -42,7 +42,7 @@
 .l-page-list-layout__button:disabled {
   background-color: var(--light-grey);
   color: var(--med-grey);
-  border: 2px solid var(--med-grey);
+  border: 1px solid var(--med-grey);
 }
 .l-page-list-layout__button:nth-child(1) {
   border-top-left-radius: 12px;
@@ -52,12 +52,13 @@
 .l-page-list-layout__button:nth-child(3) {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+  border-left: none;
 }
 .l-page-list-layout__page-num {
   width: 40px;
-  border-top: 2px solid var(--med-grey);
+  border-top: 1px solid var(--med-grey);
   /* background-color: var(--light-grey); */
-  border-bottom: 2px solid var(--med-grey);
+  border-bottom: 1px solid var(--med-grey);
   text-align: center;
   color: var(--med-grey);
   line-height: 35px;
