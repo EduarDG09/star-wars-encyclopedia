@@ -1,45 +1,50 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Menu } from "react-feather";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const menuOptions = [
   {
     value: "Characters",
-    link: "/#",
+    link: "/characters",
   },
   {
     value: "Films",
-    link: "/#",
+    link: "/films",
   },
   {
     value: "Species",
-    link: "/#",
+    link: "/species",
   },
   {
     value: "Starships",
-    link: "/#",
+    link: "/starships",
   },
   {
     value: "Vehicles",
-    link: "/#",
+    link: "/vehicles",
   },
   {
     value: "Planets",
-    link: "/#",
+    link: "/planets",
   },
 ];
 export default function Header() {
+  const burgerToggle = useRef();
   return (
     <header className={styles["l-header"]}>
       <div className={styles["l-header__item"]}>
         <div className={styles["c-logo"]}>
-          <img src="/assets/img/logo.png" />
+          <NavLink to="/">
+            <img src="/assets/img/logo.png" />
+          </NavLink>
         </div>
       </div>
       <div className={styles["l-header__item"]}>
         <input
           type="checkbox"
           id="burger-toggle"
+          ref={burgerToggle}
           className={styles["c-burger-toggle"]}
         ></input>
         <label className={styles["c-burger"]} htmlFor="burger-toggle">
@@ -49,7 +54,18 @@ export default function Header() {
           <ul className={styles["c-main-nav__menu"]}>
             {menuOptions.map((option, i) => (
               <li key={i} className={styles["c-main-nav__item"]}>
-                <a href={option.link}>{option.value}</a>
+                <NavLink
+                  // @ts-ignore
+                  onClick={() => (burgerToggle.current.checked = false)}
+                  to={`/list${option.link}`}
+                  className={({ isActive }) =>
+                    `${styles["c-main-nav__link"]} ${
+                      isActive ? styles["c-main-nav__link--selected"] : ""
+                    }`
+                  }
+                >
+                  {option.value}
+                </NavLink>
               </li>
             ))}
           </ul>

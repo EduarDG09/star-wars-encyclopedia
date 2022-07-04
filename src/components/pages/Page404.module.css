@@ -1,0 +1,21 @@
+.l-page-404 {
+  flex: 1;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .l-page-404 {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+.l-page-404__title {
+  padding-left: 2rem;
+  font-size: 3em;
+  color: var(--light-grey);
+  margin-bottom: 1rem;
+}
+.l-page-404__text {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  color: var(--dark-grey);
+}

@@ -88,7 +88,11 @@ export default function Home() {
         )}
         {requestStatus === "LOADING" && <GridLoading />}
         {requestStatus === "COMPLETED" && (
-          <ItemsGrid items={searchResult} moreData={handleData} />
+          <ItemsGrid
+            items={searchResult}
+            moreData={handleData}
+            typeLabel={true}
+          />
         )}
       </div>
     </main>

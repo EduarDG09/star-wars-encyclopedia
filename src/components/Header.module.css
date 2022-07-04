@@ -98,7 +98,7 @@
     margin-right: unset;
   }
 }
-.c-main-nav__item a {
+.c-main-nav__link {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   display: block;
@@ -107,16 +107,23 @@
   font-size: 1.25em;
   font-weight: 600;
 }
-.c-main-nav__item a:active {
+.c-main-nav__link--selected {
+  text-decoration: underline;
+}
+.c-main-nav__link:active {
   text-decoration: underline;
 }
 @media (min-width: 800px) {
-  .c-main-nav__item a {
+  .c-main-nav__link {
     color: var(--med-grey);
     font-weight: 400;
     font-size: 1em;
   }
-  .c-main-nav__item a:hover {
+  .c-main-nav__link--selected {
+    color: var(--black);
+    font-weight: 600;
+  }
+  .c-main-nav__link:hover {
     text-decoration: underline;
     color: var(--dark-grey);
   }

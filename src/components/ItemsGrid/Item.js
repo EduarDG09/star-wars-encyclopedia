@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 
 Item.propTypes = {
   item: PropTypes.object,
+  typeLabel: PropTypes.bool,
 };
 
 export default function Item(props) {
-  const { item } = props;
+  const { item, typeLabel } = props;
   const itemNumber = item.url.split("/")[5];
   let type = item.url.split("/")[4];
   if (type === "people") type = "characters";
@@ -19,9 +20,11 @@ export default function Item(props) {
         onError={(e) => e.target.remove()}
       />
       <h3 className={styles["c-item__text"]}>{item.name || item.title}</h3>
-      <p className={styles["c-item__type"]}>{`${type
-        .charAt(0)
-        .toUpperCase()}${type.substring(1)}`}</p>
+      {typeLabel && (
+        <p className={styles["c-item__type"]}>{`${type
+          .charAt(0)
+          .toUpperCase()}${type.substring(1)}`}</p>
+      )}
     </article>
   );
 }

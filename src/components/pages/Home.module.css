@@ -30,3 +30,6 @@
   margin: 0;
   color: var(--mid-grey);
 }
+.c-welcome__text a {
+  color: var(--blue);
+}

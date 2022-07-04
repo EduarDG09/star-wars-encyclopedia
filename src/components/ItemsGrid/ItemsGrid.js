@@ -7,10 +7,11 @@ import { Meh } from "react-feather";
 ItemsGrid.propTypes = {
   items: PropTypes.array,
   moreData: PropTypes.func,
+  typeLabel: PropTypes.bool,
 };
 
 export default function ItemsGrid(props) {
-  const { items } = props;
+  const { items, typeLabel } = props;
   let classStr = styles["l-items-grid__item--auto-justify"];
   if (!items || items.length === 0) {
     return (
@@ -33,7 +34,7 @@ export default function ItemsGrid(props) {
     <section className={styles["l-items-grid"]}>
       <div className={`${styles["l-items-grid__item"]} ${classStr}`}>
         {items.map((item, i) => (
-          <Item key={i} item={item} />
+          <Item key={i} item={item} typeLabel={typeLabel} />
         ))}
       </div>
     </section>

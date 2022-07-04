@@ -8,7 +8,6 @@ export default function GridLoading() {
       <article className={styles["c-grid-loading__item"]}></article>
       <article className={styles["c-grid-loading__item"]}></article>
       <article className={styles["c-grid-loading__item"]}></article>
-      <article className={styles["c-grid-loading__item"]}></article>
     </section>
   );
 }

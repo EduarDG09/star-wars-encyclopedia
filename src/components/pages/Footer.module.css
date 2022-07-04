@@ -23,6 +23,7 @@
 }
 .l-footer__text a {
   font-weight: 600;
+  color: var(--blue);
 }
 @media (min-width: 800px) {
   .l-footer__text {
