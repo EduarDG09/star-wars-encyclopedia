@@ -27,8 +27,12 @@ export default function List() {
       let item = listItem;
       if (item === "characters") item = "people";
       let url = `https://swapi.dev/api/${item}/?page=${page}`;
-      const response = await fetch(url);
-      return await response.json();
+      try {
+        const response = await fetch(url);
+        return await response.json();
+      } catch (err) {
+        console.log(err);
+      }
     },
     [listItem]
   );
@@ -36,7 +40,7 @@ export default function List() {
   const getItems = async (page) => {
     if (requestState !== "LOADING") setRequestState("LOADING");
     const data = await getData(page);
-    if (data.next === null) setStillMoreData(false);
+    if (data?.next === null) setStillMoreData(false);
     else {
       if (!stillMoreData) setStillMoreData(true);
     }
@@ -73,35 +77,37 @@ export default function List() {
 
   return (
     <section className={styles["l-page-list-layout"]}>
+      <h2
+        className={styles["l-page-list-layout__title"]}
+      >{`${listItem[0].toUpperCase()}${listItem.substring(1)}`}</h2>
       {requestState === "LOADING" && <GridLoading />}
       {requestState === "COMPLETED" && (
         <>
-          <h2
-            className={styles["l-page-list-layout__title"]}
-          >{`${listItem[0].toUpperCase()}${listItem.substring(1)}`}</h2>
           <ItemsGrid items={items} />
-          <div className={styles["l-page-list-layout__pagination"]}>
-            <button
-              type="button"
-              disabled={!(currentPage > 1)}
-              onClick={handlePrevPage}
-              className={styles["l-page-list-layout__button"]}
-            >
-              Previous
-            </button>
-            <p className={styles["l-page-list-layout__page-num"]}>
-              {currentPage}
-            </p>
-            <button
-              type="button"
-              onClick={handleNextPage}
-              disabled={!stillMoreData}
-              className={styles["l-page-list-layout__button"]}
-            >
-              Next
-            </button>
-          </div>
         </>
+      )}
+      {items.length > 0 && (
+        <div className={styles["l-page-list-layout__pagination"]}>
+          <button
+            type="button"
+            disabled={!(currentPage > 1)}
+            onClick={handlePrevPage}
+            className={styles["l-page-list-layout__button"]}
+          >
+            Previous
+          </button>
+          <p className={styles["l-page-list-layout__page-num"]}>
+            {currentPage}
+          </p>
+          <button
+            type="button"
+            onClick={handleNextPage}
+            disabled={!stillMoreData}
+            className={styles["l-page-list-layout__button"]}
+          >
+            Next
+          </button>
+        </div>
       )}
     </section>
   );
